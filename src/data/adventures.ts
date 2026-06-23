@@ -97,7 +97,7 @@ export const adventures: Adventure[] = [
     slug: 'offerte-rosso-sangue',
     title: 'Offerte Rosso Sangue',
     subtitle: 'Omicidio in parrocchia',
-    coverImageUrl: 'https://wallpapers.com/images/featured/medieval-fantasy-krvphc5yb1whovd1.jpg',
+    coverImageUrl: '/images/PineCove_1.jpg',
     synopsis:
       "Il Reverendo Thomas viene trovato morto nel suo studio durante l'annuale fiera di beneficenza. Le donazioni per il nuovo tetto della parrocchia sono sparite.",
     longDescription:
@@ -106,7 +106,6 @@ export const adventures: Adventure[] = [
     genres: ['Cozy Mistery', 'Investigazione', 'Avventura'],
     playerCount: '3-5 giocatori',
     duration: 'one-shot da circa 3 ore',
-    levelRange: null,
     featured: true,
     downloads: [
       {
@@ -118,20 +117,12 @@ export const adventures: Adventure[] = [
         fileSize: '12.4 MB',
       },
       {
-        id: 'adv-001-pg',
+        id: 'adv-003-pg',
         label: 'Schede PG pre-generate',
         description: '4 personaggi pronti da giocare',
         fileUrl: '#',
         icon: 'fa-solid fa-credit-card',
         fileSize: '3.1 MB',
-      },
-      {
-        id: 'adv-001-regole',
-        label: 'Riassunto regole',
-        description: 'Regole opzionali per duelli politici e assedi',
-        fileUrl: '#',
-        icon: 'fa-solid fa-scroll',
-        fileSize: '1.8 MB',
       },
     ],
   },
