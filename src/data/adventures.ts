@@ -37,7 +37,7 @@ export const adventures: Adventure[] = [
         label: 'Schede PG pre-generate',
         description: '6 personaggi di livello 5 pronti da giocare',
         fileUrl: '#',
-        icon: 'fa-solid fa-id-card',
+        icon: 'fa-solid fa-credit-card',
         fileSize: '3.1 MB',
       },
       {
@@ -79,7 +79,7 @@ export const adventures: Adventure[] = [
         label: 'Schede Investigatori pre-generate',
         description: '5 investigatori pronti, con mazzo di carte dedicato',
         fileUrl: '#',
-        icon: 'fa-solid fa-id-card',
+        icon: 'fa-solid fa-credit-card',
         fileSize: '2.5 MB',
       },
       {
