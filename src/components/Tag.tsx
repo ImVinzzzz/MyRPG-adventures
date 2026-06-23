@@ -19,6 +19,7 @@ const GENRE_ICONS: Record<string, string> = {
   Politica: 'fa-solid fa-chess-rook',
   Mistero: 'fa-solid fa-puzzle-piece',
   Avventura: 'fa-solid fa-compass',
+  'Cozy Mistery': 'fa-solid fa-magnifying-glass',
 };
 
 const DEFAULT_GENRE_ICON = 'fa-solid fa-tag';
