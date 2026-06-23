@@ -15,7 +15,7 @@ const SYSTEM_SEAL_ICONS: Record<string, string> = {
 
 function getSealIcon(system: string): string {
   if (SYSTEM_SEAL_ICONS[system]) return SYSTEM_SEAL_ICONS[system];
-  if (system.toLowerCase().includes('custom')) return 'fa-solid fa-gears';
+  if (system.toLowerCase().includes('custom')) return 'fa-solid fa-wand-sparkles';
   return 'fa-solid fa-dice-d20';
 }
 
