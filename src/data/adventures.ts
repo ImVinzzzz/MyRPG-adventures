@@ -12,7 +12,7 @@ export const adventures: Adventure[] = [
     slug: 'le-ceneri-di-valdrak',
     title: 'Le Ceneri di Valdrak',
     subtitle: 'Un regno di montagna brucia sotto il peso dei suoi segreti',
-    coverImageUrl: 'https://placehold.co/800x500/0D1814/C9A227?text=Le+Ceneri+di+Valdrak',
+    coverImageUrl: 'https://wallpapers.com/images/featured/medieval-fantasy-krvphc5yb1whovd1.jpg',
     synopsis:
       "Quando il Concilio dei Forgiati viene trovato senza vita nella Sala del Martello, la città-fortezza di Valdrak si spacca in tre fazioni pronte alla guerra civile. Gli avventurieri, unici stranieri nella rocca, sono i soli a poter indagare senza essere già parte del complotto — se sopravvivono abbastanza da scoprirlo.",
     longDescription:
@@ -55,7 +55,7 @@ export const adventures: Adventure[] = [
     slug: 'leco-di-carbonio',
     title: "L'Eco di Carbonio",
     subtitle: 'Nella città-fabbrica di Sør-Vinter, anche le ombre pagano un turno',
-    coverImageUrl: 'https://placehold.co/800x500/0D1814/C9A227?text=L%27Eco+di+Carbonio',
+    coverImageUrl: 'https://wallpapers.com/images/hd/fantasy-background-8t9v7f98sxuk0y5u.jpg', /*'https://placehold.co/800x500/0D1814/C9A227?text=L%27Eco+di+Carbonio', */
     synopsis:
       "Da settimane, gli operai del distretto industriale di Sør-Vinter scompaiono senza lasciare traccia, se non un sottile strato di fuliggine nera. Un gruppo di investigatori indipendenti viene assunto per scoprire la verità — e si troverà davanti a un'entità che si nutre del fumo delle ciminiere e dei segreti di chi le accende.",
     longDescription:
