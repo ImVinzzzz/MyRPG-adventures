@@ -55,18 +55,17 @@ export default function Home(): ReactElement {
       <header className="border-b border-[#2B3D34] bg-[#0D1814]">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-10 sm:py-14">
           <div className="flex items-center gap-3 text-[#C9A227]">
-            <i className="fa-solid fa-book-skull text-2xl" aria-hidden="true" />
+            <i className="fa-solid fa-book-atlas text-2xl" aria-hidden="true" />
             <span className="text-xs font-semibold uppercase tracking-[0.2em]">
               Archivio del Narratore
             </span>
           </div>
           <h1 className="font-serif text-3xl font-bold sm:text-4xl md:text-5xl">
-            Le Cronache che ho scritto
+            Le Cronache di Wyatt Zephirion
           </h1>
           <p className="max-w-2xl text-sm text-[#A7B3AC] sm:text-base">
-            Una raccolta di avventure, campagne e one-shot per D&amp;D e sistemi inventati da
-            zero. Ogni dossier contiene sinossi, materiali pronti da stampare e tutto il
-            necessario per portarla al tuo tavolo.
+            Una raccolta di avventure, campagne e one-shot per D&amp;D e altri GdR custom e inventati da zero. 
+            Ogni dossier contiene sinossi, materiali pronti da stampare e tutto il necessario per portarla al tuo tavolo.
           </p>
         </div>
       </header>
