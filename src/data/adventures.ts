@@ -51,7 +51,7 @@ export const adventures: Adventure[] = [
     ],
   },
   {
-    id: 'adv-003',
+    id: 'adv-002',
     slug: 'leco-di-carbonio',
     title: "L'Eco di Carbonio",
     subtitle: 'Nella città-fabbrica di Sør-Vinter, anche le ombre pagano un turno',
@@ -67,7 +67,7 @@ export const adventures: Adventure[] = [
     featured: false,
     downloads: [
       {
-        id: 'adv-003-completa',
+        id: 'adv-002-completa',
         label: 'Avventura completa',
         description: '34 pagine: ambientazione, indizi e tre finali alternativi',
         fileUrl: '#',
@@ -75,7 +75,7 @@ export const adventures: Adventure[] = [
         fileSize: '8.7 MB',
       },
       {
-        id: 'adv-003-pg',
+        id: 'adv-002-pg',
         label: 'Schede Investigatori pre-generate',
         description: '5 investigatori pronti, con mazzo di carte dedicato',
         fileUrl: '#',
@@ -83,7 +83,7 @@ export const adventures: Adventure[] = [
         fileSize: '2.5 MB',
       },
       {
-        id: 'adv-003-regole',
+        id: 'adv-002-regole',
         label: 'Riassunto regole Karbon',
         description: 'Le meccaniche di Fuliggine, Indizi e Confronto in 4 pagine',
         fileUrl: '#',
@@ -93,7 +93,7 @@ export const adventures: Adventure[] = [
     ],
   },
   {
-    id: 'adv-00x2',
+    id: 'adv-003',
     slug: 'offerte-rosso-sangue',
     title: 'Offerte Rosso Sangue',
     subtitle: 'Omicidio in parrocchia',
@@ -123,6 +123,48 @@ export const adventures: Adventure[] = [
         fileUrl: '#',
         icon: 'fa-solid fa-credit-card',
         fileSize: '3.1 MB',
+      },
+    ],
+  },
+  {
+    id: 'adv-004',
+    slug: 'il-banchetto-di-re-zuccheroso',
+    title: 'Il Banchetto di Re Zuccheroso',
+    subtitle: '',
+    coverImageUrl: 'images/zuccheroso.png',
+    synopsis:
+      "C’era una volta, in un bosco molto, molto lontano, un luogo dove le storie prendevano vita. Ma questa non è la solita storia di principi coraggiosi e fate gentili. Questa è la storia di ciò che accade quando ci si dimentica dell’oscurità.",
+    longDescription:
+      "In questa one-shot, i giocatori interpretano gli Antagonisti, i cattivi delle fiabe che, oscurati dalla bontà eccessiva del mondo reale, hanno perso la memoria. Il gruppo deve trovare 5 Mele Memorine sparse per il castello e i suoi dintorni per rompere l’incantesimo di Re Zuccheroso e fuggire (o conquistare il regno)..",
+    system: 'Avalon Sword',
+    genres: ['Fantasy', 'Avventura', 'Investigazione'],
+    playerCount: '3-5 giocatori',
+    duration: 'oneshot da circa 3 ore',
+    featured: false,
+    downloads: [
+      {
+        id: 'adv-004-completa',
+        label: 'Avventura completa',
+        description: '16 pagine: avventura, statblock e bivi narrativi',
+        fileUrl: 'pdfs/zuccheroso1.pdf',
+        icon: 'fa-solid fa-book-open',
+        fileSize: '12.4 MB',
+      },
+      {
+        id: 'adv-004-pg',
+        label: 'Schede PG pre-generate',
+        description: '4 personaggi pronti da giocare',
+        fileUrl: 'pdfs/zuccheroso-pg.pdf',
+        icon: 'fa-solid fa-credit-card',
+        fileSize: '3.2 MB',
+      },
+      {
+        id: 'adv-004-pg2',
+        label: 'I ricordi dei PG',
+        description: 'Schede complete con tutti i ricordi e i retroscena dei PG.',
+        fileUrl: 'pdfs/zuccheroso2.pdf',
+        icon: 'fa-solid fa-scroll',
+        fileSize: '5.7 MB',
       },
     ],
   },
