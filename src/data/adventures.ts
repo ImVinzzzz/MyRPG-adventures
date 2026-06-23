@@ -51,7 +51,7 @@ export const adventures: Adventure[] = [
     ],
   },
   {
-    id: 'adv-002',
+    id: 'adv-003',
     slug: 'leco-di-carbonio',
     title: "L'Eco di Carbonio",
     subtitle: 'Nella città-fabbrica di Sør-Vinter, anche le ombre pagano un turno',
@@ -67,7 +67,7 @@ export const adventures: Adventure[] = [
     featured: false,
     downloads: [
       {
-        id: 'adv-002-completa',
+        id: 'adv-003-completa',
         label: 'Avventura completa',
         description: '34 pagine: ambientazione, indizi e tre finali alternativi',
         fileUrl: '#',
@@ -75,7 +75,7 @@ export const adventures: Adventure[] = [
         fileSize: '8.7 MB',
       },
       {
-        id: 'adv-002-pg',
+        id: 'adv-003-pg',
         label: 'Schede Investigatori pre-generate',
         description: '5 investigatori pronti, con mazzo di carte dedicato',
         fileUrl: '#',
@@ -83,7 +83,7 @@ export const adventures: Adventure[] = [
         fileSize: '2.5 MB',
       },
       {
-        id: 'adv-002-regole',
+        id: 'adv-003-regole',
         label: 'Riassunto regole Karbon',
         description: 'Le meccaniche di Fuliggine, Indizi e Confronto in 4 pagine',
         fileUrl: '#',
@@ -93,15 +93,15 @@ export const adventures: Adventure[] = [
     ],
   },
   {
-    id: 'adv-003',
+    id: 'adv-00x2',
     slug: 'offerte-rosso-sangue',
     title: 'Offerte Rosso Sangue',
     subtitle: 'Omicidio in parrocchia',
     coverImageUrl: '/images/PineCove_1.jpg',
     synopsis:
-      "Il Reverendo Thomas viene trovato morto nel suo studio durante l'annuale fiera di beneficenza. Le donazioni per il nuovo tetto della parrocchia sono sparite.",
-    longDescription:
       "Il Reverendo Thomas viene trovato morto nel suo studio durante l'annuale fiera di beneficenza. Le donazioni per il nuovo tetto della parrocchia sono sparite. Lo Sceriffo Miller ha già ammanettato il povero Tommy, il garzone innocente.",
+    longDescription:
+      "I Segreti di Pine Cove è un gioco di ruolo strutturato a Episodi, esattamente come una serie televisiva. Ogni sessione (o un paio di sessioni per i casi più complessi) rappresenta un caso chiuso. L'obiettivo non è combattere, ma usare l'astuzia, l'osservazione e il pettegolezzo per far trionfare la giustizia a Pine Cove. Il sistema di gioco è basato sulla narrazione. Il giocatore descrive cosa fa il suo PG e come lo fa. Se l'azione ha un esito incerto o comporta un rischio, l'Autore chiede di tirare i dadi (2d6 system).",
     system: 'Pine Cove',
     genres: ['Cozy Mistery', 'Investigazione', 'Avventura'],
     playerCount: '3-5 giocatori',
@@ -109,7 +109,7 @@ export const adventures: Adventure[] = [
     featured: true,
     downloads: [
       {
-        id: 'adv-003-completa',
+        id: 'adv-002-completa',
         label: 'Avventura completa',
         description: '58 pagine: mappe, statblock e bivi narrativi',
         fileUrl: '#',
@@ -117,7 +117,7 @@ export const adventures: Adventure[] = [
         fileSize: '12.4 MB',
       },
       {
-        id: 'adv-003-pg',
+        id: 'adv-002-pg',
         label: 'Schede PG pre-generate',
         description: '4 personaggi pronti da giocare',
         fileUrl: '#',
