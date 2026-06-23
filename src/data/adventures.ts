@@ -131,11 +131,11 @@ export const adventures: Adventure[] = [
     slug: 'il-banchetto-di-re-zuccheroso',
     title: 'Il Banchetto di Re Zuccheroso',
     subtitle: '',
-    coverImageUrl: 'images/zuccheroso.png',
+    coverImageUrl: 'images/zuccheroso.jpg',
     synopsis:
       "C’era una volta, in un bosco molto, molto lontano, un luogo dove le storie prendevano vita. Ma questa non è la solita storia di principi coraggiosi e fate gentili. Questa è la storia di ciò che accade quando ci si dimentica dell’oscurità.",
     longDescription:
-      "In questa one-shot, i giocatori interpretano gli Antagonisti, i cattivi delle fiabe che, oscurati dalla bontà eccessiva del mondo reale, hanno perso la memoria. Il gruppo deve trovare 5 Mele Memorine sparse per il castello e i suoi dintorni per rompere l’incantesimo di Re Zuccheroso e fuggire (o conquistare il regno)..",
+      "In questa one-shot, i giocatori interpretano gli Antagonisti, i cattivi delle fiabe che, oscurati dalla bontà eccessiva del mondo reale, hanno perso la memoria. Il gruppo deve trovare 5 Mele Memorine sparse per il castello e i suoi dintorni per rompere l’incantesimo di Re Zuccheroso e fuggire (o conquistare il regno). <br/> Avventura per il GDR 'I Ricordi del Fiabbosco' di Avalon Sword.",
     system: 'Avalon Sword',
     genres: ['Fantasy', 'Avventura', 'Investigazione'],
     playerCount: '3-5 giocatori',
