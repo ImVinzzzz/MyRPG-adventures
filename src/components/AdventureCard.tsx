@@ -11,6 +11,8 @@ interface AdventureCardProps {
 const SYSTEM_SEAL_ICONS: Record<string, string> = {
   'D&D 5e': 'fa-solid fa-dragon',
   'Pathfinder 2e': 'fa-solid fa-dice-d20',
+  'Pine Cove': 'fa-solid fa-magnifying-glass',
+  'Avalon Sword': 'fa-solid fa-dungeon',
 };
 
 function getSealIcon(system: string): string {
