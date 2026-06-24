@@ -32,8 +32,8 @@ export default function AdventureDetail(): ReactElement {
           to="/"
           className="mt-2 inline-flex items-center gap-2 rounded-full bg-[#C9A227] px-5 py-2 text-sm font-semibold text-[#10241F] transition hover:bg-[#E8C766]"
         >
-          <i className="fa-solid fa-arrow-left" aria-hidden="true" />
-          Torna all&apos;archivio
+          <i className="fa-solid fa-angles-left" aria-hidden="true" />
+          torna all&apos;archivio 
         </Link>
       </div>
     );
@@ -106,11 +106,24 @@ export default function AdventureDetail(): ReactElement {
           )}
         </div>
 
+        {/* Note: box facoltativo, mostrato solo se l'avventura ha qualcosa da segnalare */}
+        {adventure.notes && (
+          <section className="mt-10 rounded-xl border border-dashed border-[#C9A227]/40 bg-[#16241F] p-5">
+            <h2 className="flex items-center gap-2 font-serif text-lg font-bold text-[#E8E2D0]">
+              <i className="fa-solid fa-feather-pointed text-[#C9A227]" aria-hidden="true" />
+              Note
+            </h2>
+            <p className="mt-3 whitespace-pre-line leading-relaxed text-[#C3CBC5]">
+              {adventure.notes}
+            </p>
+          </section>
+        )}
+
         {/* Sezione Download */}
         <section className="mt-12">
           <h2 className="font-serif text-xl font-bold text-[#E8E2D0]">Materiali da scaricare</h2>
           <p className="mt-1 text-sm text-[#A7B3AC]">
-            Tutto il necessario per portare questa avventura al tavolo.
+            Tutto il necessario per portare questa avventura sul tuo tavolo.
           </p>
           <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {adventure.downloads.map((resource) => (
