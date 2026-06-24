@@ -23,6 +23,7 @@ export const adventures: Adventure[] = [
     duration: '4-6 sessioni da circa 3 ore',
     levelRange: 'Livelli 5-9',
     featured: true,
+    notes: "Contiene un combattimento ambientato dentro una fucina attiva: se al tavolo preferite evitare descrizioni di ustioni, nelle note del master trovate una variante 'a basso impatto' che sposta la scena di scontro all'esterno.",
     downloads: [
       {
         id: 'adv-001-completa',
@@ -60,7 +61,7 @@ export const adventures: Adventure[] = [
       "Da settimane, gli operai del distretto industriale di Sør-Vinter scompaiono senza lasciare traccia, se non un sottile strato di fuliggine nera. Un gruppo di investigatori indipendenti viene assunto per scoprire la verità — e si troverà davanti a un'entità che si nutre del fumo delle ciminiere e dei segreti di chi le accende.",
     longDescription:
       "Karbon è un sistema custom leggero pensato per l'horror investigativo industriale: usa un mazzo di carte normali invece dei dadi e introduce la meccanica della 'Fuliggine' per misurare quanto i personaggi si stanno avvicinando alla verità — e a qualcosa che preferirebbe restare nell'ombra. Pensata come one-shot espandibile, con NPC modulari e tre possibili colpevoli a seconda delle prove raccolte dal tavolo.",
-    system: 'Sistema Custom: Karbon',
+    system: 'Custom: Karbon',
     genres: ['Horror', 'Investigazione', 'Sci-Fi'],
     playerCount: '3-5 giocatori',
     duration: '2-3 sessioni da circa 3 ore (one-shot espandibile)',
@@ -107,6 +108,7 @@ export const adventures: Adventure[] = [
     playerCount: '3-5 giocatori',
     duration: 'one-shot da circa 3 ore',
     featured: true,
+    notes: "Avventura per il GDR 'I Segreti di Pine Cove', cozy mistery basato  sul telefilm anni '80 'Murder She Wrote'.",
     downloads: [
       {
         id: 'adv-002-completa',
@@ -135,12 +137,13 @@ export const adventures: Adventure[] = [
     synopsis:
       "C’era una volta, in un bosco molto, molto lontano, un luogo dove le storie prendevano vita. Ma questa non è la solita storia di principi coraggiosi e fate gentili. Questa è la storia di ciò che accade quando ci si dimentica dell’oscurità.",
     longDescription:
-      "In questa one-shot, i giocatori interpretano gli Antagonisti, i cattivi delle fiabe che, oscurati dalla bontà eccessiva del mondo reale, hanno perso la memoria. Il gruppo deve trovare 5 Mele Memorine sparse per il castello e i suoi dintorni per rompere l’incantesimo di Re Zuccheroso e fuggire (o conquistare il regno). \n Avventura per il GDR 'I Ricordi del Fiabbosco' di Avalon Sword.",
+      "In questa one-shot, i giocatori interpretano gli Antagonisti, i cattivi delle fiabe che, oscurati dalla bontà eccessiva del mondo reale, hanno perso la memoria. Il gruppo deve trovare 5 Mele Memorine sparse per il castello e i suoi dintorni per rompere l’incantesimo di Re Zuccheroso e fuggire (o conquistare il regno).",
     system: 'Avalon Sword',
     genres: ['Fantasy', 'Avventura', 'Investigazione'],
     playerCount: '3-5 giocatori',
     duration: 'oneshot da circa 3 ore',
     featured: false,
+    notes: "Avventura per il GDR 'I Ricordi del Fiabbosco' di Avalon Sword.",
     downloads: [
       {
         id: 'adv-004-completa',
