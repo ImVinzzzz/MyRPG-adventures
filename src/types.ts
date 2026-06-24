@@ -52,6 +52,10 @@ export interface Adventure {
   duration?: string;
   /** Fascia di livello: applicabile solo a sistemi level-based, va omessa altrimenti */
   levelRange?: string;
+  /** Note libere mostrate in un box dedicato tra la sinossi e i download
+   *  (es. avvertenze sui contenuti, crediti, varianti, errata). Va omesso
+   *  se non c'è nulla da segnalare: il box non viene mostrato. */
+  notes?: string;
   /** Materiali scaricabili collegati a questa avventura */
   downloads: DownloadResource[];
   /** Se true, l'avventura può essere evidenziata in home come "In evidenza" */
