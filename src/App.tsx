@@ -2,6 +2,7 @@ import type { ReactElement } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import AdventureDetail from './pages/AdventureDetail';
+import Footer from './components/Footer';
 
 /**
  * Componente radice dell'app: configura il routing tra la home
@@ -26,6 +27,7 @@ export default function App(): ReactElement {
         {/* Qualsiasi path non riconosciuto riporta in home */}
         <Route path="*" element={<Home />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
