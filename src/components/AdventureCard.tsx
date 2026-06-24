@@ -81,7 +81,7 @@ export default function AdventureCard({ adventure }: AdventureCardProps): ReactE
 
         <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#C9A227] transition-transform group-hover:translate-x-0.5">
           Apri il dossier
-          <i className="fa-solid fa-arrow-right text-xs" aria-hidden="true" />
+          <i className="fa-solid fa-angles-right text-xs" aria-hidden="true" />
         </span>
       </div>
     </Link>
