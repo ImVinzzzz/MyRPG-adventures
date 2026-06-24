@@ -193,18 +193,6 @@ export const adventures: Adventure[] = [
       icon: "fa-solid fa-book-skull",
       fileSize: "2,5 MB",
     },
-    {
-      id: "pippo-baudo-schede-pg-pre-generate",
-      label: "Schede PG pre-generate",
-      fileUrl: "#",
-      icon: "fa-solid fa-id-card",
-    },
-    {
-      id: "pippo-baudo-riassunto-regole",
-      label: "Riassunto regole",
-      fileUrl: "#",
-      icon: "fa-solid fa-scroll",
-    },
   ],
 },
 ];
