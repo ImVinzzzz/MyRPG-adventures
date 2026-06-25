@@ -171,28 +171,4 @@ export const adventures: Adventure[] = [
       },
     ],
   },
-  {
-  id: "pippo-baudo",
-  slug: "pippo-baudo",
-  title: "Pippo Baudo",
-  subtitle: "",
-  coverImageUrl: "https://placehold.co/800x500/0D1814/C9A227?text=Pippo+Baudo",
-  synopsis: "L'ho inventato io il festival.",
-  longDescription: "Perché Sanremo è Sanremo...",
-  system: "Custom: Pippo Baudo",
-  genres: [],
-  duration: "oneshot da 60 minuti",
-  featured: true,
-  notes: "Si gioca con le carte da poker.",
-  downloads: [
-    {
-      id: "pippo-baudo-avventura-completa",
-      label: "Avventura completa",
-      description: "Tutto ciò che serve per giocare",
-      fileUrl: "/pdfs/pippobaudo1.pdf",
-      icon: "fa-solid fa-book-skull",
-      fileSize: "2,5 MB",
-    },
-  ],
-},
 ];
