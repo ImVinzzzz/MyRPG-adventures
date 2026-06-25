@@ -46,7 +46,7 @@ export default function AdventureCard({ adventure }: AdventureCardProps): ReactE
 
         {adventure.featured && (
           <span className="absolute left-3 top-3 rounded-full bg-[#8B2635]/90 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#F1E5C2] shadow-md">
-            <i class="fa-solid fa-splotch"></i> In evidenza
+            <i className="fa-solid fa-splotch"></i> In evidenza
           </span>
         )}
 

@@ -9,8 +9,11 @@ interface FilterBarProps {
   selectedSystem: string | null;
   /** Generi attualmente selezionati (selezione multipla, OR tra loro) */
   selectedGenres: string[];
+  /** Filtro solo avventure in evidenza */
+  onlyFeatured: boolean;
   onSystemChange: (system: string | null) => void;
   onGenreToggle: (genre: string) => void;
+  onFeaturedToggle: () => void;
   onReset: () => void;
 }
 
@@ -35,20 +38,32 @@ export default function FilterBar({
   genres,
   selectedSystem,
   selectedGenres,
+  onlyFeatured,
   onSystemChange,
   onGenreToggle,
+  onFeaturedToggle,
   onReset,
 }: FilterBarProps): ReactElement {
-  const hasActiveFilters = selectedSystem !== null || selectedGenres.length > 0;
+  const hasActiveFilters = selectedSystem !== null || selectedGenres.length > 0 || onlyFeatured;
 
   return (
     <div className="flex flex-col gap-5 rounded-xl border border-[#2B3D34] bg-[#0D1814] p-5">
-      {/* Filtro per sistema di gioco (selezione singola) */}
+      {/* Filtro extra per evidenziati e sistema di gioco */}
       <div className="flex flex-col gap-2">
         <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#7C8A83]">
-          Sistema di gioco
+          Stato e Sistema
         </span>
         <div className="flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={onFeaturedToggle}
+            className={chipClasses(onlyFeatured)}
+            aria-pressed={onlyFeatured}
+          >
+            <i className="fa-solid fa-star text-[0.7rem]" aria-hidden="true" />
+            In Evidenza
+          </button>
+          <div className="w-px bg-[#2B3D34] self-stretch my-1"></div>
           <button
             type="button"
             onClick={() => onSystemChange(null)}
@@ -56,7 +71,7 @@ export default function FilterBar({
             aria-pressed={selectedSystem === null}
           >
             <i className="fa-solid fa-layer-group text-[0.7rem]" aria-hidden="true" />
-            Tutti
+            Tutti i sistemi
           </button>
           {systems.map((system) => (
             <button
