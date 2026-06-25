@@ -61,7 +61,7 @@ export default function AdventureDetail(): ReactElement {
             to="/"
             className="mb-4 inline-flex items-center gap-2 text-sm font-medium text-[#C3CBC5] hover:text-[#E8C766]"
           >
-            <i className="fa-solid fa-arrow-left" aria-hidden="true" />
+            <i className="fa-solid fa-angles-left" aria-hidden="true" />
             Torna all&apos;archivio
           </Link>
           <h1 className="font-serif text-3xl font-bold sm:text-4xl md:text-5xl">
