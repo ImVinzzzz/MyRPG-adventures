@@ -30,20 +30,22 @@ export default function Home(): ReactElement {
   );
 
   const filteredAdventures = useMemo(() => {
-    return adventures.filter((adventure) => {
-      const matchesSystem = selectedSystem === null || adventure.system === selectedSystem;
-      // I generi selezionati sono in OR tra loro: basta che l'avventura
-      // abbia almeno uno dei generi spuntati per comparire nei risultati.
-      const matchesGenres =
-        selectedGenres.length === 0 ||
-        selectedGenres.some((genre) => adventure.genres.includes(genre));
-      const matchesFeatured = !onlyFeatured || !!adventure.featured;
-      const matchesSearch =
-        searchQuery.trim() === '' ||
-        adventure.title.toLowerCase().includes(searchQuery.toLowerCase());
+    return adventures
+      .filter((adventure) => {
+        const matchesSystem = selectedSystem === null || adventure.system === selectedSystem;
+        // I generi selezionati sono in OR tra loro: basta che l'avventura
+        // abbia almeno uno dei generi spuntati per comparire nei risultati.
+        const matchesGenres =
+          selectedGenres.length === 0 ||
+          selectedGenres.some((genre) => adventure.genres.includes(genre));
+        const matchesFeatured = !onlyFeatured || !!adventure.featured;
+        const matchesSearch =
+          searchQuery.trim() === '' ||
+          adventure.title.toLowerCase().includes(searchQuery.toLowerCase());
 
-      return matchesSystem && matchesGenres && matchesFeatured && matchesSearch;
-    });
+        return matchesSystem && matchesGenres && matchesFeatured && matchesSearch;
+      })
+      .sort((a, b) => a.title.localeCompare(b.title, 'it', { sensitivity: 'base' }));
   }, [selectedSystem, selectedGenres, onlyFeatured, searchQuery]);
 
   function toggleGenre(genre: string): void {
