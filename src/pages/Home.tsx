@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo, useState } from 'react';
 import type { ReactElement } from 'react';
 import { adventures } from '../data/adventures';
 import AdventureCard from '../components/AdventureCard';
@@ -16,24 +16,6 @@ export default function Home(): ReactElement {
   const [onlyFeatured, setOnlyFeatured] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [showFilters, setShowFilters] = useState<boolean>(false);
-  const [showScrollTop, setShowScrollTop] = useState<boolean>(false);
-
-  // Gestione del pulsante torna in cima al variare dello scroll
-  useEffect(() => {
-    function handleScroll(): void {
-      if (window.scrollY > 300) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
-    }
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = (): void => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   // Elenco di sistemi e generi derivato dai dati: nessuna lista da
   // mantenere manualmente quando si aggiunge una nuova avventura.
@@ -195,18 +177,6 @@ export default function Home(): ReactElement {
           </div>
         )}
       </main>
-
-      {/* Bottone "Torna in cima" */}
-      {showScrollTop && (
-        <button
-          type="button"
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-[#C9A227]/30 bg-[#0D1814]/90 text-[#C9A227] shadow-lg shadow-black/40 backdrop-blur-sm transition-all duration-300 hover:border-[#C9A227] hover:bg-[#16241F] hover:text-[#E8C766] hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#C9A227]"
-          aria-label="Torna in cima"
-        >
-          <i className="fa-solid fa-arrow-up text-lg" aria-hidden="true" />
-        </button>
-      )}
     </div>
   );
 }
