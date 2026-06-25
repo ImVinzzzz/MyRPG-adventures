@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import type { ReactElement } from 'react';
 import { adventures } from '../data/adventures';
 import AdventureCard from '../components/AdventureCard';
@@ -13,6 +13,27 @@ import FilterBar from '../components/FilterBar';
 export default function Home(): ReactElement {
   const [selectedSystem, setSelectedSystem] = useState<string | null>(null);
   const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
+  const [onlyFeatured, setOnlyFeatured] = useState<boolean>(false);
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [showFilters, setShowFilters] = useState<boolean>(false);
+  const [showScrollTop, setShowScrollTop] = useState<boolean>(false);
+
+  // Gestione del pulsante torna in cima al variare dello scroll
+  useEffect(() => {
+    function handleScroll(): void {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = (): void => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // Elenco di sistemi e generi derivato dai dati: nessuna lista da
   // mantenere manualmente quando si aggiunge una nuova avventura.
@@ -34,9 +55,14 @@ export default function Home(): ReactElement {
       const matchesGenres =
         selectedGenres.length === 0 ||
         selectedGenres.some((genre) => adventure.genres.includes(genre));
-      return matchesSystem && matchesGenres;
+      const matchesFeatured = !onlyFeatured || !!adventure.featured;
+      const matchesSearch =
+        searchQuery.trim() === '' ||
+        adventure.title.toLowerCase().includes(searchQuery.toLowerCase());
+
+      return matchesSystem && matchesGenres && matchesFeatured && matchesSearch;
     });
-  }, [selectedSystem, selectedGenres]);
+  }, [selectedSystem, selectedGenres, onlyFeatured, searchQuery]);
 
   function toggleGenre(genre: string): void {
     setSelectedGenres((prev) =>
@@ -44,9 +70,15 @@ export default function Home(): ReactElement {
     );
   }
 
+  function toggleFeatured(): void {
+    setOnlyFeatured((prev) => !prev);
+  }
+
   function resetFilters(): void {
     setSelectedSystem(null);
     setSelectedGenres([]);
+    setOnlyFeatured(false);
+    setSearchQuery('');
   }
 
   return (
@@ -57,7 +89,7 @@ export default function Home(): ReactElement {
           <div className="flex items-center gap-3 text-[#C9A227]">
             <i className="fa-solid fa-book-atlas text-2xl" aria-hidden="true" />
             <span className="text-xs font-semibold uppercase tracking-[0.2em]">
-              Archivio del Narratore
+               Archivio del Narratore
             </span>
           </div>
           <h1 className="font-serif text-3xl font-bold sm:text-4xl md:text-5xl">
@@ -71,16 +103,60 @@ export default function Home(): ReactElement {
       </header>
 
       <main className="mx-auto max-w-6xl px-6 py-10 sm:py-14">
-        {/* Filtri: mostrati solo se c'è almeno un'avventura in archivio */}
+        {/* Barra di controllo superiore con Cerca e Toggle Filtri */}
         {adventures.length > 0 && (
-          <div className="mb-8">
+          <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => setShowFilters((prev) => !prev)}
+                className="inline-flex items-center gap-2 rounded-lg border border-[#2B3D34] bg-[#0D1814] px-4 py-2.5 text-sm font-semibold text-[#E8E2D0] transition-colors hover:border-[#C9A227] hover:bg-[#16241F] focus:outline-none focus:ring-2 focus:ring-[#C9A227]"
+              >
+                <i
+                  className={`fa-solid ${showFilters ? 'fa-eye-slash' : 'fa-filter'} text-xs text-[#C9A227]`}
+                  aria-hidden="true"
+                />
+                {showFilters ? 'Nascondi filtri' : 'Mostra filtri'}
+              </button>
+            </div>
+            
+            <div className="relative flex-1 max-w-md">
+              <i
+                className="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-sm text-[#7C8A83]"
+                aria-hidden="true"
+              />
+              <input
+                type="text"
+                placeholder="Cerca avventura per titolo..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full rounded-lg border border-[#2B3D34] bg-[#0D1814] py-2.5 pl-10 pr-4 text-sm text-[#E8E2D0] placeholder-[#7C8A83] transition-colors focus:border-[#C9A227] focus:outline-none focus:ring-1 focus:ring-[#C9A227]"
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#7C8A83] hover:text-[#E8E2D0]"
+                >
+                  <i className="fa-solid fa-xmark" aria-hidden="true" />
+                </button>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Filtri */}
+        {adventures.length > 0 && showFilters && (
+          <div className="mb-8 animate-fadeIn">
             <FilterBar
               systems={systems}
               genres={genres}
               selectedSystem={selectedSystem}
               selectedGenres={selectedGenres}
+              onlyFeatured={onlyFeatured}
               onSystemChange={setSelectedSystem}
               onGenreToggle={toggleGenre}
+              onFeaturedToggle={toggleFeatured}
               onReset={resetFilters}
             />
           </div>
@@ -119,6 +195,18 @@ export default function Home(): ReactElement {
           </div>
         )}
       </main>
+
+      {/* Bottone "Torna in cima" */}
+      {showScrollTop && (
+        <button
+          type="button"
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-[#C9A227]/30 bg-[#0D1814]/90 text-[#C9A227] shadow-lg shadow-black/40 backdrop-blur-sm transition-all duration-300 hover:border-[#C9A227] hover:bg-[#16241F] hover:text-[#E8C766] hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#C9A227]"
+          aria-label="Torna in cima"
+        >
+          <i className="fa-solid fa-arrow-up text-lg" aria-hidden="true" />
+        </button>
+      )}
     </div>
   );
 }
