@@ -1,4 +1,5 @@
-import type { ReactElement } from 'react';
+import type { ReactElement } from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer(): ReactElement {
   return (
@@ -8,7 +9,14 @@ export default function Footer(): ReactElement {
           Sito amatoriale senza fini di lucro. Non si intende infrangere alcun copyright.
           Tutti i marchi registrati appartengono ai relativi proprietari.
         </p>
-        <p>
+        <div className="flex items-center gap-4">
+          <Link
+            to="/editor"
+            className="inline-flex items-center gap-1.5 text-[#C9A227] hover:text-[#E8C766] font-semibold transition-colors"
+          >
+            <i className="fa-solid fa-screwdriver-wrench text-sm" aria-hidden="true" />
+            Editor Avventure
+          </Link>
           <a
             href="https://my-boardgame.vercel.app/"
             target="_blank"
@@ -18,7 +26,7 @@ export default function Footer(): ReactElement {
             <i className="fa-solid fa-chess-bishop text-sm" aria-hidden="true" />
             Archivio Board Game
           </a>
-        </p>
+        </div>
       </div>
     </footer>
   );
