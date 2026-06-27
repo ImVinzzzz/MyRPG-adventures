@@ -1,8 +1,9 @@
-import { useState, useEffect, type ReactElement } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import AdventureDetail from './pages/AdventureDetail';
-import Footer from './components/Footer';
+import { useState, useEffect, type ReactElement } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import AdventureDetail from "./pages/AdventureDetail";
+import AdventureEditor from "./pages/AdventureEditor";
+import Footer from "./components/Footer";
 
 export default function App(): ReactElement {
   const [showScrollTop, setShowScrollTop] = useState<boolean>(false);
@@ -18,7 +19,7 @@ export default function App(): ReactElement {
       }
 
       // Evita la sovrapposizione con il footer
-      const footer = document.querySelector('footer');
+      const footer = document.querySelector("footer");
       if (footer) {
         const footerRect = footer.getBoundingClientRect();
         const windowHeight = window.innerHeight;
@@ -32,18 +33,18 @@ export default function App(): ReactElement {
       }
     }
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     // Eseguiamo il controllo anche al resize della pagina
-    window.addEventListener('resize', handleScroll);
+    window.addEventListener("resize", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
     };
   }, []);
 
   const scrollToTop = (): void => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -53,6 +54,7 @@ export default function App(): ReactElement {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/avventura/:slug" element={<AdventureDetail />} />
+            <Route path="/editor" element={<AdventureEditor />} />
             {/* Qualsiasi path non riconosciuto riporta in home */}
             <Route path="*" element={<Home />} />
           </Routes>
